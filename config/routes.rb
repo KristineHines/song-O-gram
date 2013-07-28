@@ -1,11 +1,12 @@
 RecipeCreator::Application.routes.draw do
-  root :to => "home#index"
+  root :to => "users#index"
 
-  resources :user do
+  resources :users do
   end
 
   match "/login" => "sessions#create" 
-  match "/signup" => "users#create"
+  match "/signup" => "users#new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
