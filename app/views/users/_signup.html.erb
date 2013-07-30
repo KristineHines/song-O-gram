@@ -5,11 +5,18 @@
   <%= f.label :last_name %>
   <%= f.text_field :last_name %><br />
 
+  <%= f.label :username %>
+  <%= f.text_field :username %><br />
+
   <%= f.label :email %>
-  <%= f.text_field :email %><br />
+  <%= f.email_field :email %><br />
 
   <%= f.label :password %>
   <%= f.password_field :password %><br />
+
+  
+  <%= f.hidden_field :admin %>
+  <%= hidden_field_tag :admin, admin: false %>
 
   <%= f.label "Password Confirmation" %>
   <%= f.password_field :password_confirmation %><br />

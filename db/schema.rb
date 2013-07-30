@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716235052) do
+ActiveRecord::Schema.define(:version => 20130730004154) do
+
+  create_table "amounts", :force => true do |t|
+    t.integer  "number",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "directions", :force => true do |t|
     t.string   "text",       :null => false
@@ -64,9 +70,9 @@ ActiveRecord::Schema.define(:version => 20130716235052) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-    t.boolean  "admin"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.boolean  "admin",           :default => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
 end

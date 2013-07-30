@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
       if @user.save
-        render users_path
+        redirect_to @user
       else
         @errors = @user.errors.full_messages
-        render users_path
+        render new_user_path
       end
   end
 end
