@@ -5,7 +5,7 @@ RecipeCreator::Application.routes.draw do
   end
 
   get "/login", to: "sessions#new" 
-  get "/signup" to: "users#new"
+  get "/signup", to: "users#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
