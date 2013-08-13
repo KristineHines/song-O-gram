@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    p params
     @user = User.find(params[:id])
   end
 
@@ -26,6 +25,8 @@ class UsersController < ApplicationController
     @user.update_attributes!(user_params)
     redirect_to @user
   end
+
+  private
 
   def user_params
     params.require(:user).permit!
