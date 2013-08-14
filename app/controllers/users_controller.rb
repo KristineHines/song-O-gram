@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   def index
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+  
   def new
     @user = User.new
   end
@@ -12,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @errors = @user.errors.full_messages
-      render signup_path
+      render :new
     end
   end
 
@@ -27,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    #end session?
     @user = User.find(params[:id]).destroy
     redirect_to :root
   end

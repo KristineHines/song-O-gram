@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20130716235052) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "amounts", force: true do |t|
     t.integer  "number",     null: false
     t.datetime "created_at"
@@ -70,8 +67,8 @@ ActiveRecord::Schema.define(version: 20130716235052) do
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
-    t.string   "email"
+    t.string   "username",                        null: false
+    t.string   "email",                           null: false
     t.string   "password_digest"
     t.boolean  "admin",           default: false
     t.datetime "created_at"
