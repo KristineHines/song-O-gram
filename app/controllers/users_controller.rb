@@ -7,13 +7,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-      if @user.save
-        redirect_to @user
-      else
-        @errors = @user.errors.full_messages
-        render new_user_path
-      end
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
+    else
+      @errors = @user.errors.full_messages
+      render signup_path
+    end
   end
 
   def edit
@@ -24,6 +24,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attributes!(user_params)
     redirect_to @user
+  end
+
+  def destroy
+    #end session?
+    @user = User.find(params[:id]).destroy
+    redirect_to :root
   end
 
   private
