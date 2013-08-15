@@ -36,6 +36,7 @@ group :test do
   gem 'database_cleaner'
 end
 
+
 # To use ActiveModel has_secure_password
 
 # To use Jbuilder templates for JSON
