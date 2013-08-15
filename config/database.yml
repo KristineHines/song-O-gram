@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database:project_template_dev
+  database: project_template_dev
   pool: 5
   timeout: 5000
 
